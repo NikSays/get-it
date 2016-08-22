@@ -1,0 +1,14 @@
+body {
+  height: 90vh;
+  width: 100vw;
+}
+#chatField {
+  height: 80%;
+  margin-left: 0;
+  overflow-y:scroll;
+}
+#chatMsg {
+  bottom: 0;
+  overflow-x:hidden;
+  overflow-wrap: break-word;
+}
