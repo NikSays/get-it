@@ -3,22 +3,27 @@ jQuery(document).ready(function(){
   $.ajaxSetup ({
       cache: false
     });
-  //load chat.html to the chat field every 1 sec.
+  //making chat to load only if file have been changed
   function get_it(){
     $.ajax({
       url:"chat.html",
       type:"GET",
       ifModified:true,
-      success:function( data ) {
-        $("#chatMsg").replaceWith($("#chatMsg").html(data));
-        $("#chatField").scrollTop($("#chatField")[0].scrollHeight)
+      statusCode: {
+        200:function( data ) {
+          $("#chatMsg").replaceWith($("#chatMsg").html(data));
+          $("#chatField").scrollTop($("#chatField")[0].scrollHeight);
+        },
+        304:function(){
+          console.log("W: NOMODIF");
+        }
       }
     });
   };
+  //load chat.html to the chat field every 1 sec.
+  get_it();
+  setInterval(get_it, 1775);
 
-
-  setInterval(get_it, 2500);
-  function load(){$("#chatField").scrollTop($("#chatField")[0].scrollHeight);};
   //Asking for nickname
   var name=prompt("Nickname");
   while(name==null||name==""){var name=prompt("Please write your nickname, sir.");};
