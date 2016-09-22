@@ -11,7 +11,7 @@ To work properly it needs 2 client-sided files and 2 server-sided files
 ##What's new
 * Added /cls function that clears chat file
 * Little more easy
-* Now chat.html loads only if changed
+* Now chat.html loads only if changed  
 ##TO-DO
 * make userlist
 * Rebase of whole project:
