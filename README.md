@@ -1,5 +1,5 @@
 # GET_IT
-Get_it it's an easy chat
+Get_it is an easy chat
 It uses only 2 functions as the core:   
 `file_put_contents()` and `jQuery.Ajax()`  
 To work properly it needs 2 client-sided files and 2 server-sided files
